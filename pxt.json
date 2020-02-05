@@ -2,7 +2,8 @@
     "name": "jet-test",
     "dependencies": {
         "device": "*",
-        "Color Fading": "github:jwunderl/pxt-color#v0.0.32"
+        "Color Fading": "github:jwunderl/pxt-color#v0.0.32",
+        "color-coded-tilemap": "*"
     },
     "description": "",
     "files": [
