@@ -1,26 +1,13 @@
 controller.player1.onButtonEvent(ControllerButton.Right, ControllerButtonEvent.Pressed, function () {
     index += 1
     index = index % 3
-//    imageChange(index)
-    // scene.centerCameraAt(pos.x, pos.y)
-    // scene.backgroundImage().scroll(0, -10)
     sprite.say(`POS=${sprite.x} ${sprite.y}`)
 })
 controller.player1.onButtonEvent(ControllerButton.Down, ControllerButtonEvent.Pressed, function () {
-	
 })
-/*
-function imageChange (index: number) {
-    scene.setBackgroundImage(img`
-        a 6 e 4 a e . a 7 e
-    `)
-    image.setPalette(photos[index].palette)
-}
-*/
 controller.player1.onButtonEvent(ControllerButton.Up, ControllerButtonEvent.Pressed, function () {
 })
 controller.player1.onButtonEvent(ControllerButton.Left, ControllerButtonEvent.Pressed, function () {
-
 })
 
 
@@ -35,6 +22,12 @@ const phots:palettedimage[]=[
     Assets.Images.IMAGE_2,
     Assets.Images.IMAGE_3,
 ];
+
+const tile_all:Sprite[]=[];
+let i=0;
+for(i=0;i<200;i++){
+    tile_all.push(sprites.create(Assets.Images.IMAGE_1.image))
+}
 
 let sprite: Sprite =sprites.create(Assets.Images.BPImage.image);
 image.setPalette(Assets.Images.BPImage.palette)
@@ -60,6 +53,8 @@ sprite.z = 0
 game.onUpdate(()=>{
     index++;
     index=index%3
+
+    sprite.clearObstacles()
     //sprite.setImage(img)
     sprite = sprites.create(phots[index].image);
     
